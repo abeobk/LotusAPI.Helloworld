@@ -13,5 +13,7 @@ namespace LotusAPI.Helloworld {
         public Form1() {
             InitializeComponent();
         }
+
+        //change some codes
     }
 }
