@@ -18,10 +18,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\LotusAPI\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,45 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Abeo.Controls">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\Abeo.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.Controls">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.Data">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.HW">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.HW.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.Robotics">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.Robotics.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.Settings">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.Sim">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.Sim.dll</HintPath>
+    </Reference>
+    <Reference Include="LotusAPI.Utils">
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\LotusAPI.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\SharpGL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL.WinForms, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\SharpGL.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Designer, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LotusAPI\bin\SQLite.Designer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

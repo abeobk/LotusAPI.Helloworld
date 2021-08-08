@@ -13,6 +13,7 @@ namespace LotusAPI.Helloworld {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Registry.SetApplicationName("Example\\Ex1");
             Application.Run(new Form1());
         }
     }
