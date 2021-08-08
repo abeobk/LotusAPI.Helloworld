@@ -30,8 +30,13 @@
             this.flatFormButtonsHorizontal1 = new Abeo.Controls.ZeroCode.FlatFormButtonsHorizontal();
             this.imgview = new LotusAPI.Controls.FastImageView();
             this.btLoad = new Abeo.Controls.FlatButton();
+            this.btConnect = new Abeo.Controls.FlatButton();
+            this.timer_capture = new System.Windows.Forms.Timer(this.components);
+            this.pointcloudView1 = new LotusAPI.Controls.PointcloudView();
+            this.flatButton1 = new Abeo.Controls.FlatButton();
             this.flatTitlePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointcloudView1)).BeginInit();
             this.SuspendLayout();
             // 
             // logView1
@@ -97,6 +102,8 @@
             // flatTitlePanel1
             // 
             this.flatTitlePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
+            this.flatTitlePanel1.Controls.Add(this.flatButton1);
+            this.flatTitlePanel1.Controls.Add(this.btConnect);
             this.flatTitlePanel1.Controls.Add(this.btLoad);
             this.flatTitlePanel1.Controls.Add(this.flatFormButtonsHorizontal1);
             this.flatTitlePanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -126,7 +133,7 @@
             this.imgview.DrawFPS = false;
             this.imgview.EnablePanZoom = true;
             this.imgview.FrameRate = 60;
-            this.imgview.Location = new System.Drawing.Point(0, 32);
+            this.imgview.Location = new System.Drawing.Point(485, 32);
             this.imgview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgview.Name = "imgview";
             this.imgview.OpenGLVersion = SharpGL.Version.OpenGLVersion.OpenGL2_1;
@@ -136,7 +143,7 @@
             this.imgview.ShowDebugInfo = true;
             this.imgview.ShowImageBorder = true;
             this.imgview.ShowPixelInfo = false;
-            this.imgview.Size = new System.Drawing.Size(966, 378);
+            this.imgview.Size = new System.Drawing.Size(481, 378);
             this.imgview.TabIndex = 4;
             this.imgview.UseCustomMouseEvent = false;
             this.imgview.ZoomPanModifierKey = System.Windows.Forms.Keys.None;
@@ -164,6 +171,68 @@
             this.btLoad.UseVisualStyleBackColor = false;
             this.btLoad.Click += new System.EventHandler(this.btLoad_Click);
             // 
+            // btConnect
+            // 
+            this.btConnect.BackColor = System.Drawing.Color.Transparent;
+            this.btConnect.BorderColor = System.Drawing.Color.Empty;
+            this.btConnect.BorderSize = 0;
+            this.btConnect.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btConnect.FlatAppearance.BorderSize = 0;
+            this.btConnect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(44)))));
+            this.btConnect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(212)))));
+            this.btConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btConnect.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(231)))), ((int)(((byte)(212)))));
+            this.btConnect.Location = new System.Drawing.Point(65, 0);
+            this.btConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btConnect.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(44)))));
+            this.btConnect.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(212)))));
+            this.btConnect.Name = "btConnect";
+            this.btConnect.Size = new System.Drawing.Size(85, 32);
+            this.btConnect.TabIndex = 2;
+            this.btConnect.Text = "Connect";
+            this.btConnect.UseVisualStyleBackColor = false;
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
+            // 
+            // timer_capture
+            // 
+            this.timer_capture.Tick += new System.EventHandler(this.timer_capture_Tick);
+            // 
+            // pointcloudView1
+            // 
+            this.pointcloudView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pointcloudView1.DrawFPS = false;
+            this.pointcloudView1.Location = new System.Drawing.Point(0, 32);
+            this.pointcloudView1.Name = "pointcloudView1";
+            this.pointcloudView1.OpenGLVersion = SharpGL.Version.OpenGLVersion.OpenGL2_1;
+            this.pointcloudView1.RenderContextType = SharpGL.RenderContextType.FBO;
+            this.pointcloudView1.RenderTrigger = SharpGL.RenderTrigger.Manual;
+            this.pointcloudView1.Size = new System.Drawing.Size(485, 378);
+            this.pointcloudView1.TabIndex = 5;
+            // 
+            // flatButton1
+            // 
+            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton1.BorderColor = System.Drawing.Color.Empty;
+            this.flatButton1.BorderSize = 0;
+            this.flatButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flatButton1.FlatAppearance.BorderSize = 0;
+            this.flatButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(44)))));
+            this.flatButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(212)))));
+            this.flatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(231)))), ((int)(((byte)(212)))));
+            this.flatButton1.Location = new System.Drawing.Point(150, 0);
+            this.flatButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatButton1.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(44)))));
+            this.flatButton1.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(212)))));
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Size = new System.Drawing.Size(120, 32);
+            this.flatButton1.TabIndex = 3;
+            this.flatButton1.Text = "Load 3D";
+            this.flatButton1.UseVisualStyleBackColor = false;
+            this.flatButton1.Click += new System.EventHandler(this.flatButton1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +240,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(966, 648);
             this.Controls.Add(this.imgview);
+            this.Controls.Add(this.pointcloudView1);
             this.Controls.Add(this.flatTitlePanel1);
             this.Controls.Add(this.logView1);
             this.Controls.Add(this.flatStatusBar1);
@@ -180,6 +250,7 @@
             this.Text = "Form1";
             this.flatTitlePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointcloudView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,6 +263,10 @@
         private Abeo.Controls.ZeroCode.FlatFormButtonsHorizontal flatFormButtonsHorizontal1;
         private Abeo.Controls.FlatButton btLoad;
         private Controls.FastImageView imgview;
+        private Abeo.Controls.FlatButton btConnect;
+        private System.Windows.Forms.Timer timer_capture;
+        private Controls.PointcloudView pointcloudView1;
+        private Abeo.Controls.FlatButton flatButton1;
     }
 }
 
